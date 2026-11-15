@@ -1,37 +1,17 @@
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="ecoClasificacion.css">
-    </head>
-    
-    <body>
-        <div class="container">
-            <div class="game">
-                <div>
-                    <h4>Score: 20</h4>
-                    <h3>5</h3>
-                </div>
-                <div class="trash">
-                    <img src="assets/trash/plastic/3.png">
-                </div>
-                <div class="trashBins">
-                    <div class="acomodo"><img name="glass"     src="assets/bin1.png" class="tamaño"> <label>Vidrio</label></div>
-                    <div class="acomodo"><img name="hazardous" src="assets/bin2.png" class="tamaño"> <label>Peligrosos</label></div>
-                    <div class="acomodo"><img name="metal"     src="assets/bin3.png" class="tamaño"> <label>Metal</label></div>
-                    <div class="acomodo"><img name="paper"     src="assets/bin4.png" class="tamaño"> <label>Papel y carton</label></div>
-                    <div class="acomodo"><img name="plastic"   src="assets/bin5.png" class="tamaño"> <label>Plastico</label></div>
-                    <div class="acomodo"><img name="organic"   src="assets/bin6.png" class="tamaño"> <label>Organico</label></div>
-                   
-                </div>
-
-                <button class="backToHomeButton" onclick="window.location.href='../index.html'">Volver al inicio</button>
-
-                <div class="gameOver">
-                    <h1>Juego Finalizado!</h1>
-                    <p id="replayBtn">Volver a Jugar</p>
-                </div>
-
-            </div>
-        </div>
-        <script src="ecoClasificacion.js"></script>
-    </body>
-</html>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#184e39"><title>EcoClasificación | AgroGames</title><link rel="stylesheet" href="ecoClasificacion.css"><script src="ecoClasificacion.js" defer></script></head><body>
+<header class="site-header"><a href="../index.html" class="brand">🌱 AgroGames</a><nav><a href="../index.html">Inicio</a><a href="comoJugar.html">Cómo jugar</a></nav></header>
+<main class="layout"><section class="intro"><span class="eyebrow">Aprende a reciclar jugando</span><h1>♻️ EcoClasificación</h1><p>Observa el residuo y deposítalo en el contenedor correcto. Puedes arrastrarlo o simplemente tocar el contenedor.</p></section>
+<section class="game" aria-label="Juego de clasificación"><div class="hud"><div class="metric"><small>⭐ Puntuación</small><strong id="score">0</strong></div><div class="metric"><small>⏱️ Tiempo</small><strong id="time">60 s</strong></div><div class="metric"><small>🔥 Racha</small><strong id="combo">0</strong></div></div>
+<div class="progress"><div id="progressFill"></div></div>
+<div class="stage"><div class="prompt">¿Dónde colocarías este residuo?</div><div class="trash-wrap"><img id="trashItem" draggable="true" alt="Residuo para clasificar"></div><div id="feedback" role="status" aria-live="polite">Elige uno de los seis contenedores.</div></div>
+<div class="bins" id="bins">
+<button class="bin" data-type="glass"><img src="assets/bin1.png" alt=""><span>Vidrio</span></button>
+<button class="bin" data-type="hazardous"><img src="assets/bin2.png" alt=""><span>Peligrosos</span></button>
+<button class="bin" data-type="metal"><img src="assets/bin3.png" alt=""><span>Metal</span></button>
+<button class="bin" data-type="paper"><img src="assets/bin4.png" alt=""><span>Papel y cartón</span></button>
+<button class="bin" data-type="plastic"><img src="assets/bin5.png" alt=""><span>Plástico</span></button>
+<button class="bin" data-type="organic"><img src="assets/bin6.png" alt=""><span>Orgánico</span></button>
+</div><div class="actions"><button id="restart" class="btn secondary">↻ Reiniciar partida</button><button id="pause" class="btn secondary">⏸ Pausar</button></div></section>
+<aside class="sidebar"><h2>🌍 ¡Cada residuo cuenta!</h2><p>Clasifica correctamente para ganar puntos y tiempo extra.</p><div class="tip">✓ Acierto: <strong>+10 puntos</strong> y <strong>+2 segundos</strong></div><div class="tip">✕ Error: pierdes la racha, pero puedes intentarlo de nuevo.</div><p class="muted">Los contenedores también funcionan con clics y toques. No necesitas arrastrar en el teléfono.</p></aside></main>
+<div class="modal-backdrop" id="modal"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-emoji" id="modalEmoji">🌱</div><h2 id="modalTitle">¡Bienvenido!</h2><p id="modalText">¿Cuántos residuos puedes clasificar?</p><button id="modalButton" class="btn">¡Comenzar!</button></div></div>
+<footer>🌱 AgroGames · Aprende jugando, cuida el planeta</footer></body></html>

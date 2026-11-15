@@ -1,22 +1,7 @@
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AlimentaMatch</title>
-        <link rel="stylesheet" href="alimentaMatch.css">
-        <script src="alimentaMatch.js"></script>
-    </head>
-
-    <body>
-        <h1>Puntaje: <span id="score">0</span></h1>
-        <button onclick="useRowBuster()">Destructor de Filas</button>
-        <button onclick="useColumnBuster()">Destructor de Columnas</button>
-        <button onclick="useColorBombPowerUp()">Bomba</button>
-        <div id="board"></div>
-    </body>
-
-    <button class="back-to-home-button" onclick="window.location.href='../index.html'">Volver al inicio</button>
-
-</html>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#164a35"><title>AlimentaMatch · Nivel 1 | AgroGames</title><link rel="stylesheet" href="alimentaMatch.css"><script defer src="alimentaMatch.js"></script><script defer src="match-effects.js"></script></head><body>
+<header class="topbar"><a class="logo" href="../index.html">🌱 AgroGames</a><nav class="nav"><a href="menuAlimentaMatch.html">← Elegir nivel</a><a href="ComoJugarAlimentaMatch.html">Cómo jugar</a><a href="../index.html">Inicio</a></nav></header>
+<main class="layout"><div class="heading"><span class="eyebrow">Desafío de alimentación · Nivel 1</span><h1>🍓 AlimentaMatch</h1><p>¡Combina frutas, consigue puntos y descubre nuevas estrategias!</p></div>
+<section class="game-card" aria-label="Tablero de juego"><div class="scorebar"><div class="score-pill">⭐ Puntos <strong id="score" aria-live="polite">0</strong></div><div class="score-pill timer" id="timerDisplay" aria-live="off">✨ ¡A combinar!</div></div><div id="board" aria-label="Tablero de nueve por nueve"></div>
+<div class="actions"><button class='action-btn secondary' onclick='location.reload()'>↻ Reiniciar</button></div></section>
+<aside class="sidebar"><div class="sidebar-card"><h2>⚡ Potenciadores</h2><p>¡Utilízalos cuando tengas suficientes puntos!</p><button class="power" onclick="useRowBuster()">💥 Limpiar fila <span>↔</span></button><button class="power" onclick="useColumnBuster()">🌪️ Limpiar columna <span>↕</span></button><button class="power" onclick="useColorBombPowerUp()">🌈 Bomba de color <span>✦</span></button></div><div class="sidebar-card"><h2>🎯 Cómo jugar</h2><ol class="help"><li>Une 3 o más frutas iguales.</li><li>Arrastra una fruta a una casilla vecina o toca dos casillas contiguas.</li><li>Consigue puntos para activar poderes.</li></ol><p>💡 Los movimientos diagonales no cuentan.</p></div></aside>
+</main><div id="overlay" class="overlay"></div><div id="customDialog" class="customDialog" role="dialog" aria-modal="true"><p class="dialogTitle">🍓 AlimentaMatch</p><p id="dialogText"></p><button class="closeButton" onclick="closeDialog()">Continuar</button></div><div id="matchToast" class="toast" role="status" aria-live="polite"></div></body></html>

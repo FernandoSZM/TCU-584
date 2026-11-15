@@ -31,3 +31,9 @@ Los controles y comportamientos internos de los juegos requieren pruebas manuale
 ## Protege la Huerta — nueva versión
 
 La pantalla de **caña de azúcar** (`space_defenders.html`) tiene HUD, partículas, animaciones, pausa, controles táctiles, menú inicial y niveles progresivos. Se reemplazó únicamente `space.js` y `space.css` para esta modalidad. La modalidad de melón mantiene su implementación original. Controles: flechas o mouse para mover; Espacio/W/E para disparar; P o Escape para pausar.
+
+## Corrección AlimentaMatch
+Se eliminó el ciclo de actualización automática del tablero cada 100 ms. El tablero inicial evita combinaciones, los puntos se generan tras movimientos válidos y las cascadas se resuelven de forma acotada. Se desactivaron las animaciones repetitivas de las frutas.
+
+## EcoClasificación 2.0
+Interfaz renovada, clasificación por clic o arrastre, contador de 60 segundos, puntuación y rachas, pausa y reinicio. Se evita el parpadeo y no se otorgan puntos automáticamente. Para probar: `/ecoClasificacion/ecoClasificacion.html`.

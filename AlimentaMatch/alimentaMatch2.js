@@ -28,16 +28,44 @@ var targetScore = 1500;
 var timerInterval;
 
 window.onload = function() {
-    
+
+}
 
 
-    window.setInterval(function(){
-        crushCandy();
-        slideCandy();
-        generateCandy();
-        checkBoosters(); 
-        checkPowerUps();
-    }, 100);
+// Resolve matches only after a successful player action. No perpetual board updates.
+let resolvingMatch = false;
+function fillAllEmptyTiles() {
+    // Gravity and refill happen together; no blank images are left on screen.
+    for (let c = 0; c < columns; c++) {
+        const fruits = [];
+        for (let r = rows - 1; r >= 0; r--) {
+            const src = board[r][c].src;
+            if (!src.includes('blank')) fruits.push(src);
+        }
+        for (let r = rows - 1, i = 0; r >= 0; r--, i++) {
+            const next = i < fruits.length ? fruits[i] : './images/' + randomCandy() + '.png';
+            if (board[r][c].getAttribute('src') !== next) board[r][c].src = next;
+        }
+    }
+}
+function resolveMatchCascade() {
+    if (resolvingMatch) return;
+    resolvingMatch = true;
+    let passes = 0;
+    function step() {
+        if (!board.length) { resolvingMatch = false; return; }
+        if (checkValid() && passes++ < 30) {
+            crushCandy();
+            fillAllEmptyTiles();
+            checkBoosters();
+            checkPowerUps();
+            setTimeout(step, 220);
+        } else {
+            document.getElementById('score').textContent = score;
+            resolvingMatch = false;
+        }
+    }
+    step();
 }
 
 function randomCandy() {
@@ -58,7 +86,12 @@ function startGame() {
         for (let c = 0; c < columns; c++) {
             let tile = document.createElement("img");
             tile.id = r.toString() + "-" + c.toString();
-            tile.src = "./images/" + randomCandy() + ".png";
+            let fruit;
+            do {
+                fruit = randomCandy();
+            } while ((c >= 2 && row[c-1].src.endsWith('/' + fruit + '.png') && row[c-2].src.endsWith('/' + fruit + '.png')) ||
+                     (r >= 2 && board[r-1][c].src.endsWith('/' + fruit + '.png') && board[r-2][c].src.endsWith('/' + fruit + '.png')));
+            tile.src = './images/' + fruit + '.png';
 
             tile.addEventListener("dragstart", dragStart);
             tile.addEventListener("dragover", dragOver);
@@ -155,7 +188,7 @@ function dragDrop() {
 
 function dragEnd() {
 
-    if (currTile.src.includes("blank") || otherTile.src.includes("blank")) {
+    if (!currTile || !otherTile || currTile.src.includes("blank") || otherTile.src.includes("blank")) {
         return;
     }
 
@@ -182,6 +215,7 @@ function dragEnd() {
         otherTile.src = currImg;
 
         let validMove = checkValid();
+        if (validMove) resolveMatchCascade();
         if (!validMove) {
             let currImg = currTile.src;
             let otherImg = otherTile.src;
@@ -468,4 +502,19 @@ function checkPowerUps() {
     if (score >= colorBombPowerUpCost) {
         enableColorBombPowerUp();
     }
+}
+// Powers trigger one bounded refill, rather than relying on a global timer.
+for (const powerName of ['useRowBuster','useColumnBuster','useColorBombPowerUp']) {
+    const original = window[powerName];
+    if (typeof original !== 'function') continue;
+    window[powerName] = function(...args) {
+        const previousScore = score;
+        original.apply(this,args);
+        if (score !== previousScore) {
+            fillAllEmptyTiles();
+            resolveMatchCascade();
+            document.getElementById('score').textContent = score;
+            checkBoosters(); checkPowerUps();
+        }
+    };
 }
