@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Juegos</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="menu-title">Agro-Games</h1>
+    </header>
+
+    <div class="menu">
+        <div class="menu-option">
+            <a href="space_defenders.html">
+                <div class="icon-container">
+                    <img src="Imagenes_MenuPrincipal/quimico.png" alt="Space Defenders">
+                </div>
+                <h2>Protege la Huerta</h2>
+            </a>
+            <div class="options">
+                <a class="play" href="space_defenders.html">Jugar</a>
+                <a class="how-to-play" href="space_defenders_caña.html">Cómo Jugar</a>
+            </div>
+        </div>
+
+        <div class="menu-option">
+            <a href="AlimentaMatch/menuAlimentaMatch.html">
+                <div class="icon-container">
+                    <img src="Imagenes_MenuPrincipal/redes-sociales.png" alt="AlimentaMatch">
+                </div>
+                <h2>AlimentaMatch</h2>
+            </a>
+            <div class="options">
+                <a class="play" href="AlimentaMatch/menuAlimentaMatch.html">Jugar</a>
+                <a class="how-to-play" href="AlimentaMatch/ComoJugarAlimentaMatch.html">Cómo Jugar</a>
+            </div>
+        </div>
+
+        <div class="menu-option">
+            <a href="ecoClasificacion/ecoClasificacion.html">
+                <div class="icon-container">
+                    <img src="Imagenes_MenuPrincipal/caja-de-reciclaje.png" alt="ecoClasificacion">
+                </div>
+                <h2>EcoClasificacion</h2>
+            </a>
+            <div class="options">
+                <a class="play" href="ecoClasificacion/ecoClasificacion.html">Jugar</a>
+                <a class="how-to-play" href="ecoClasificacion/comoJugar.html">Cómo Jugar</a>
+            </div>
+        </div>
+        
+    </div>
+
+    <footer>
+        <p>En el campo, cada surco es una historia de acción: Siembra el futuro, cosecha la victoria.</p>
+    </footer>
+</body>
+</html>

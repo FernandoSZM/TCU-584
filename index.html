@@ -1,60 +1,190 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu de Juegos</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <meta name="description" content="Agro-Games: aprende, juega y descubre el mundo de la agricultura, la alimentación y el reciclaje.">
+
+    <title>Agro-Games | Aprende jugando</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <h1 class="menu-title">Agro-Games</h1>
+
+    <header class="header">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🌱</span>
+            <span>Agro<span class="logo-highlight">Games</span></span>
+        </a>
+
+        <span class="header-label">Aprender nunca fue tan divertido</span>
     </header>
 
-    <div class="menu">
-        <div class="menu-option">
-            <a href="space_defenders.html">
-                <div class="icon-container">
-                    <img src="Imagenes_MenuPrincipal/quimico.png" alt="Space Defenders">
-                </div>
-                <h2>Protege la Huerta</h2>
-            </a>
-            <div class="options">
-                <a class="play" href="space_defenders.html">Jugar</a>
-                <a class="how-to-play" href="space_defenders_caña.html">Cómo Jugar</a>
-            </div>
-        </div>
+    <main>
 
-        <div class="menu-option">
-            <a href="AlimentaMatch/menuAlimentaMatch.html">
-                <div class="icon-container">
-                    <img src="Imagenes_MenuPrincipal/redes-sociales.png" alt="AlimentaMatch">
-                </div>
-                <h2>AlimentaMatch</h2>
-            </a>
-            <div class="options">
-                <a class="play" href="AlimentaMatch/menuAlimentaMatch.html">Jugar</a>
-                <a class="how-to-play" href="AlimentaMatch/ComoJugarAlimentaMatch.html">Cómo Jugar</a>
-            </div>
-        </div>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="eyebrow">BIENVENIDO A AGRO-GAMES</span>
 
-        <div class="menu-option">
-            <a href="ecoClasificacion/ecoClasificacion.html">
-                <div class="icon-container">
-                    <img src="Imagenes_MenuPrincipal/caja-de-reciclaje.png" alt="ecoClasificacion">
-                </div>
-                <h2>EcoClasificacion</h2>
-            </a>
-            <div class="options">
-                <a class="play" href="ecoClasificacion/ecoClasificacion.html">Jugar</a>
-                <a class="how-to-play" href="ecoClasificacion/comoJugar.html">Cómo Jugar</a>
-            </div>
-        </div>
-        
-    </div>
+                <h1>
+                    ¡Aprende jugando,<br>
+                    <span>crece explorando!</span>
+                </h1>
 
-    <footer>
-        <p>En el campo, cada surco es una historia de acción: Siembra el futuro, cosecha la victoria.</p>
+                <p>
+                    Descubre nuestros juegos educativos y diviértete
+                    mientras aprendes sobre agricultura, alimentación
+                    y cuidado del medio ambiente.
+                </p>
+
+                <a href="#juegos" class="hero-button">
+                    Explorar juegos
+                    <span>↓</span>
+                </a>
+            </div>
+
+            <div class="hero-decoration" aria-hidden="true">
+                <span class="decoration decoration-one">🌿</span>
+                <span class="decoration decoration-two">🌻</span>
+                <span class="decoration decoration-three">🍃</span>
+                <div class="hero-circle">
+                    <span>🌱</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="games-section" id="juegos">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">ELIGE TU AVENTURA</span>
+                    <h2>Nuestros juegos</h2>
+                    <p>¡Hay un mundo de aprendizaje esperándote!</p>
+                </div>
+
+                <span class="games-count">3 aventuras disponibles</span>
+            </div>
+
+            <div class="games-grid">
+
+                <!-- Protege la Huerta -->
+                <article class="game-card">
+                    <div class="game-image game-image-green">
+                        <span class="game-number">01</span>
+                        <img
+                            src="Imagenes_MenuPrincipal/quimico.png"
+                            alt="Ilustración de Protege la Huerta"
+                        >
+                    </div>
+
+                    <div class="game-info">
+                        <span class="game-category">AGRICULTURA</span>
+                        <h3>Protege la Huerta</h3>
+
+                        <p>
+                            Defiende los cultivos y protege
+                            la huerta de las amenazas.
+                        </p>
+
+                        <div class="game-actions">
+                            <a href="space_defenders.html" class="button button-primary">
+                                Jugar
+                                <span>→</span>
+                            </a>
+
+                            <a href="space_defenders_caña.html" class="button button-secondary">
+                                Cómo jugar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- AlimentaMatch -->
+                <article class="game-card">
+                    <div class="game-image game-image-yellow">
+                        <span class="game-number">02</span>
+                        <img
+                            src="Imagenes_MenuPrincipal/redes-sociales.png"
+                            alt="Ilustración de AlimentaMatch"
+                        >
+                    </div>
+
+                    <div class="game-info">
+                        <span class="game-category">ALIMENTACIÓN</span>
+                        <h3>AlimentaMatch</h3>
+
+                        <p>
+                            Combina frutas y descubre
+                            la importancia de una buena alimentación.
+                        </p>
+
+                        <div class="game-actions">
+                            <a href="AlimentaMatch/menuAlimentaMatch.html" class="button button-primary">
+                                Jugar
+                                <span>→</span>
+                            </a>
+
+                            <a href="AlimentaMatch/ComoJugarAlimentaMatch.html" class="button button-secondary">
+                                Cómo jugar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- EcoClasificacion -->
+                <article class="game-card">
+                    <div class="game-image game-image-blue">
+                        <span class="game-number">03</span>
+                        <img
+                            src="Imagenes_MenuPrincipal/caja-de-reciclaje.png"
+                            alt="Ilustración de EcoClasificación"
+                        >
+                    </div>
+
+                    <div class="game-info">
+                        <span class="game-category">MEDIO AMBIENTE</span>
+                        <h3>EcoClasificación</h3>
+
+                        <p>
+                            Aprende a separar los residuos
+                            y cuidar nuestro planeta.
+                        </p>
+
+                        <div class="game-actions">
+                            <a href="ecoClasificacion/ecoClasificacion.html" class="button button-primary">
+                                Jugar
+                                <span>→</span>
+                            </a>
+
+                            <a href="ecoClasificacion/comoJugar.html" class="button button-secondary">
+                                Cómo jugar
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="learning-banner">
+            <span class="learning-icon">🌎</span>
+            <div>
+                <h2>¡Pequeñas acciones, grandes cambios!</h2>
+                <p>
+                    Aprende, diviértete y descubre cómo puedes
+                    ayudar a construir un mundo mejor.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Agro-Games <span>•</span> Aprende, juega y cuida nuestro planeta.</p>
     </footer>
+
 </body>
 </html>
